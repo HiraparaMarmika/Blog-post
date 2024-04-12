@@ -1,0 +1,32 @@
+.postdetail-container {
+  width: 800px;
+  padding: 5px;
+  margin: 50px auto;
+}
+.postdetail {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  word-wrap: break-word;
+}
+.postdetail img {
+  width: 300px;
+  height: 300px;
+  mix-blend-mode: multiply;
+}
+.postdetail-data {
+  width: 30%;
+}
+.title {
+  color: #144650;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.description {
+  color: #7d7d7d;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.postdetail span {
+  color: black;
+}

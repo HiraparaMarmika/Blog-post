@@ -1,0 +1,49 @@
+.postapi-main {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+.postapi-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  padding: 10px;
+}
+
+.postapi-search::after {
+  position: absolute;
+  content: "";
+  bottom: 2px;
+  left: -20px;
+  width: 100%;
+  background: linear-gradient(to right, #79a6dd, #8d78c5);
+
+  height: 4px;
+}
+
+.postapi-container {
+  text-overflow: ellipsis;
+  padding: 10px;
+  color: black;
+  box-shadow: 2px 2px 2px 3px #ececee;
+  background-color: white;
+  margin: 20px auto;
+}
+.postapi-container span {
+  font-size: 17px;
+  color: black;
+  font-weight: bold;
+}
+.postapi-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.postapi-btn button {
+  padding: 5px;
+  border-color: #79a6dd;
+  background-color: #8d78c5;
+  color: wheat;
+}

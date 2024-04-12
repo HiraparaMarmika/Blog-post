@@ -1,0 +1,54 @@
+.container {
+  padding: 5px;
+  background: linear-gradient(to right, #79a6dd, #8d78c5);
+}
+.nav-link {
+  width: 1000px;
+  padding: 5px;
+  margin: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-icons {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+.nav-login .link-login {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.blognav-container {
+  background-color: #fafafa;
+  box-shadow: 2px 2px 2px 2px #ececee;
+}
+.blog-main {
+  width: 1000px;
+  padding: 10px;
+  margin: auto;
+  color: black;
+}
+.blog-title {
+  display: flex;
+
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.blog-links {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.links {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 200px;
+}
