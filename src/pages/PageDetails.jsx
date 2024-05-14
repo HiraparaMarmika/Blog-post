@@ -23,7 +23,7 @@ const PageDetails = () => {
             </p>
             <p className="description">
               <span> Description:</span>&nbsp;&nbsp;
-              {filterdata[0].desc.slice(0, 50) + "..."}
+              {filterdata[0].desc}
             </p>
           </div>
         </div>

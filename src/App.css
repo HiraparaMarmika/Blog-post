@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.spinner {
+  mix-blend-mode: multiply;
+  height: 400px;
+  width: 400px;
+}
+.api-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

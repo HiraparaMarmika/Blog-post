@@ -17,12 +17,13 @@
 }
 .createpost-container input {
   width: 100%;
+  padding: 10px;
   height: 40px;
   margin-top: 10px;
   border-radius: 6px;
   border: none;
 }
-.form-box input:focus-visible {
+.createpost-container input:focus-visible {
   outline: none;
 }
 .createpost-container button {

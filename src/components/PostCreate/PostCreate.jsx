@@ -1,7 +1,11 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Createpost.css";
-export default function Createpost({ formdatahandler }) {
+
+import Swal from "sweetalert2";
+import "./PostCreate.css";
+
+export default function PostCreate({ formDataHandler }) {
   const navigate = useNavigate();
 
   const [allData, setAlldata] = useState({ title: "", desc: "", image: "" });
@@ -19,7 +23,6 @@ export default function Createpost({ formdatahandler }) {
         setAlldata((prev) => {
           return { ...prev, [name]: e.target.result };
         });
-        // data = e.target.result;
       });
     } else {
       setAlldata((prev) => {
@@ -30,24 +33,26 @@ export default function Createpost({ formdatahandler }) {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(allData);
-    formdatahandler(allData);
+    if (allData.title === "" || allData.desc === "" || allData.image === "") {
+      return;
+    }
+
+    formDataHandler(allData);
+    Swal.fire({
+      title: "success!",
+      text: "Post added success fully!",
+      icon: "success",
+      confirmButtonText: "Done",
+    });
+    setAlldata({ title: "", desc: "", image: "" });
     navigate("/");
   };
-
   return (
     <>
       <div className="createpost-bg">
         <div className="createpost-container">
           <h1>Create Post</h1>
           <form action="" onSubmit={submitHandler}>
-            <label htmlFor="image">Choose file:</label>
-            <input
-              type="file"
-              name="image"
-              id="image"
-              onChange={allDataHandler}
-            />
             <label htmlFor="">Title:</label>
             <input
               type="text"
@@ -61,6 +66,13 @@ export default function Createpost({ formdatahandler }) {
               onChange={allDataHandler}
               value={allData.desc}
               name="desc"
+            />
+            <label htmlFor="image">Choose file:</label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              onChange={allDataHandler}
             />
             <button>Add Post</button>
           </form>

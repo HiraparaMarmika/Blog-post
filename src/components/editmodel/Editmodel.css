@@ -1,12 +1,12 @@
 .model {
   background-color: #000000b4;
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   position: fixed;
   z-index: 10;
 }
 .form-box {
-  background-color: #fafafad3;
+  background-color: #fafafadd;
   width: 30%;
   padding: 20px;
   margin: 60px auto;
@@ -22,7 +22,7 @@
 .form-box input {
   width: 100%;
   margin-top: 10px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 6px;
   box-shadow: 2px 2px 2px 2px #ececee;
   border: none;
@@ -32,6 +32,9 @@
 }
 .form-box input:hover {
   box-shadow: 1px 1px 1px 1px #7d9bd7;
+}
+.form-box .file {
+  margin-top: 20px;
 }
 .model-btn {
   display: flex;

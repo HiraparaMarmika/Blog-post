@@ -1,5 +1,5 @@
 .post-bg {
-  min-height: 100vh;
+  /* min-height: 1000px; */
   width: 1000px;
   margin: auto;
 }
@@ -32,6 +32,11 @@
 }
 .post-data .desc {
   color: #7d7d7d;
+}
+.post-data .post-readmore {
+  text-decoration: none;
+  color: cadetblue;
+  font-weight: bold;
 }
 .post-btn {
   display: flex;

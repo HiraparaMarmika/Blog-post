@@ -52,18 +52,42 @@ export default function Navbar() {
             </h1>
           </div>
           <div className="blog-links">
-            <NavLink to="/" className="links">
-              Home
-            </NavLink>
+            <ul className="navbar-ul">
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => (isActive ? "link" : "postlink")}
+                >
+                  Home
+                </NavLink>
+              </li>
+            </ul>
+
             {isadmin && (
-              <NavLink to="/blog" className="links">
-                Blog
-              </NavLink>
+              <ul className="navbar-ul">
+                <li>
+                  <NavLink
+                    to="/blog"
+                    className={({ isActive }) =>
+                      isActive ? "link" : "postlink"
+                    }
+                  >
+                    Add Post
+                  </NavLink>
+                </li>
+              </ul>
             )}
 
-            <NavLink to="/postapi" className="links">
-              Post
-            </NavLink>
+            <ul className="navbar-ul">
+              <li>
+                <NavLink
+                  to="/postapi"
+                  className={({ isActive }) => (isActive ? "link" : "postlink")}
+                >
+                  Explore Post
+                </NavLink>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

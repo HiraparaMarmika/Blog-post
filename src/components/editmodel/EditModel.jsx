@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { mycontext } from "../../context/Data";
-import "./Editmodel.css";
-import ReadMoreReact from "read-more-react";
+import "./EditModel.css";
+
 import { createPortal } from "react-dom";
 export default function Editmodel({ cancle, editpost, onEdit }) {
-  const [editdata, seteditdata] = useState({
+  const [editData, setEditData] = useState({
     id: Math.random(),
     title: "",
     desc: "",
@@ -21,20 +21,20 @@ export default function Editmodel({ cancle, editpost, onEdit }) {
       reader.readAsDataURL(image);
 
       reader.addEventListener("load", (e) => {
-        seteditdata((prev) => {
+        setEditData((prev) => {
           return { ...prev, [name]: e.target.result };
         });
-        // data = e.target.result;
       });
     } else {
-      seteditdata((prev) => {
+      setEditData((prev) => {
         return { ...prev, [name]: value };
       });
     }
   };
 
   useEffect(() => {
-    seteditdata((prev) => {
+    setEditData((prev) => {
+      console.log(prev);
       return {
         ...prev,
         title: editpost[0]?.title,
@@ -51,9 +51,9 @@ export default function Editmodel({ cancle, editpost, onEdit }) {
     console.log(index);
     formData[index] = {
       id: data[0].id,
-      title: editdata.title,
-      desc: editdata.desc,
-      image: editdata.image,
+      title: editData.title,
+      desc: editData.desc,
+      image: editData.image,
     };
     console.log(index);
     setFormData(formData);
@@ -65,44 +65,40 @@ export default function Editmodel({ cancle, editpost, onEdit }) {
     <>
       {createPortal(
         <>
-          <div className="model" onClick={cancle}></div>
-          <div className="form-box">
-            <h1 style={{ textAlign: "center" }}>Edit Model</h1>
-            <form action="" onSubmit={editTaskHandler}>
-              <input
-                type="file"
-                name="image"
-                id="image"
-                onChange={allDataHandler}
-              />
-              <label htmlFor="">title:</label>
-              <input
-                type="text"
-                name="title"
-                id=""
-                value={editdata?.title}
-                onChange={allDataHandler}
-              />
-              <label htmlFor="">desc:</label>{" "}
-              <input
-                type="text"
-                name="desc"
-                onChange={allDataHandler}
-                value={editdata?.desc}
-              />
-              <ReadMoreReact
-                text={editdata?.desc}
-                min={0}
-                max={100}
-                readMoreText="..."
-              />
-              <div className="model-btn">
-                <button className="edit">edit</button>
-                <button className="cancle" onClick={cancle}>
-                  cancle
-                </button>
-              </div>
-            </form>
+          <div className="model">
+            <div className="form-box">
+              <h1 style={{ textAlign: "center" }}>Edit Model</h1>
+              <form action="" onSubmit={editTaskHandler}>
+                <input
+                  className="file"
+                  type="file"
+                  name="image"
+                  id="image"
+                  onChange={allDataHandler}
+                />
+                <label htmlFor="">title:</label>
+                <input
+                  type="text"
+                  name="title"
+                  id=""
+                  value={editData?.title}
+                  onChange={allDataHandler}
+                />
+                <label htmlFor="">desc:</label>
+                <input
+                  type="text"
+                  name="desc"
+                  onChange={allDataHandler}
+                  value={editData?.desc}
+                />
+                <div className="model-btn">
+                  <button className="edit">edit</button>
+                  <button className="cancle" onClick={cancle}>
+                    cancle
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </>,
         document.getElementById("model")

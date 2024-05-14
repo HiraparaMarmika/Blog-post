@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 
-import Createpost from "../createpost/Createpost";
 import { mycontext } from "../../context/Data";
+import PostCreate from "../PostCreate/PostCreate";
 
 export default function Home() {
   const { formData, setFormData } = useContext(mycontext);
   console.log(formData);
 
-  const formdatahandler = (alldata) => {
+  const formDataHandler = (alldata) => {
     setFormData((prev) => {
       return [
         ...prev,
@@ -23,7 +23,7 @@ export default function Home() {
   };
   return (
     <>
-      <Createpost formdatahandler={formdatahandler} />
+      <PostCreate formDataHandler={formDataHandler} />
     </>
   );
 }

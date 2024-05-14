@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Post /> },
       { path: "/blog", element: <HomePage /> },
       { path: "/details/:Id", element: <PageDetails /> },
-      { path: "/postapi", element: <ApiPostPage />, loader: loader },
+      { path: "/postapi", element: <ApiPostPage /> },
     ],
   },
   {
