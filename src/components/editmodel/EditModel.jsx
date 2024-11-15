@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { mycontext } from "../../context/Data";
-import "./EditModel.css";
+import "./Editmodel.css";
 
 import { createPortal } from "react-dom";
 export default function Editmodel({ cancle, editpost, onEdit }) {
